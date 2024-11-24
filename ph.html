@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>เช็คเบอร์</title>
+    <style>
+         body,html {
+        font-family: "Prompt", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        
+
+            flex: 1;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color:rgb(255, 255, 255);
+        }
+
+        input, select {
+            margin: 5px; 
+        }
+
+        button {
+            font-family: "Prompt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin-top: 10px;
+        }
+
+        .center_text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .left, .right {
+            flex: 1; /* กำหนดให้ทั้งสองฝั่งใช้พื้นที่เท่ากัน */
+            display: flex;
+            justify-content: bottom;
+            align-items: bottom;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .left {
+            background-color: #a9e7ab;
+             /* สีสำหรับฝั่งซ้าย */
+        }
+
+        .right {
+            background: radial-gradient(circle, #9ed96d, #568a1f); /* สีสำหรับฝั่งขวา */
+        }
+
+
+        form{
+            text-align: center;
+        }
+        .card {
+        background: radial-gradient(circle, #c5e8a8, #68bb0f);;
+        padding: 10px;
+        border-radius: 25px;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        max-width: 700px;
+        margin: auto;
+        display: fixed;
+        }
+        .card2 {
+        background: radial-gradient(circle, #72f00c, #b5dc8c);;
+        padding: 10px;
+        border-radius: 25px;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        max-width: 700px;
+        max-height: 700px;
+        margin: auto;
+        display: fixed;
+     
+        }
+        .result {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 5dvb;   
+            font-size: 21px;
+        }
+        .result2 {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 5dvb;
+            font-size : 21px;  
+        }
+        .result3 {
+            display:flex;
+            justify-content: center;
+            align-items: bottom;
+            height: 5dvb;
+            font-size : 21px;  
+        }
+        .bottom-right-image {
+            position: fixed;
+            bottom: -45px; /* ระยะห่างจากขอบล่าง */
+            right: 0px; /* ระยะห่างจากขอบขวา */
+            width: 50%; /* กำหนดขนาดภาพ (ปรับตามต้องการ) */
+            height: 50%;
+        }
+        .bottom-left-image {
+            position: fixed;
+            bottom: -45px; /* ระยะห่างจากขอบล่าง */
+            right: 0px; /* ระยะห่างจากขอบขวา */
+            width: 50%; /* กำหนดขนาดภาพ (ปรับตามต้องการ) */
+            height: 50%;
+        }
+        </style>
+</head>
+<div class="left">
+<div class="card">
+    <body>
+        <div class="center_text">
+            <h1 style="margin-top: 5%; margin-bottom: 0;">เบอร์มงคลตามอาชีพ</h1>
+            <br>
+            <form id="myForm">
+                <label for="selection">เลือกตัวเลือก:</label>
+                <select id="selection" name="selection" required>
+                    <option value="">-- กรุณาเลือก --</option>
+                    <option value="กลุ่ม1">รับราชการ</option>
+                    <option value="กลุ่ม1">ทหาร</option>
+                    <option value="กลุ่ม1">ตำรวจ</option>
+                    <option value="กลุ่ม1">นักเรียน</option>
+                    <option value="กลุ่ม1">นักวิชาการ</option>
+                    <option value="กลุ่ม2">ค้าขาย</option>
+                    <option value="กลุ่ม2">นักธุรกิจ</option>
+                    <option value="กลุ่ม2">พนักการบริการลูกค้า</option>
+                    <option value="กลุ่ม3">E-marketing</option>
+                </select>
+                <br>
+                <button type="button" onclick="showResult()">เช็คเลย</button>
+            </form>
+            <br>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+    <div class="card2">
+    <img src
+        <div class="center_text">
+            <h1 style="margin-top: 5%; margin-bottom: 0;">กลุ่มความหมายตัวเลข</h1>
+            <br>
+            <form id="myForm">
+                <label for="selection2">เลือกตัวเลือก:</label>
+                <select id="selection2" name="selection2" required>
+                    <option value="">-- กรุณาเลือก --</option>
+                    <option value="กลุ่ม4">เรียกทรัพย์/ร่ำรวย</option>
+                    <option value="กลุ่ม5">เสน่ห์/เมตตามหานิยม</option>
+                    <option value="กลุ่ม6">ให้โชค/เสี่ยงดวง</option>
+                    <option value="กลุ่ม7">พลังอำนาจ/น่าเกรงขาม</option>
+                    <option value="กลุ่ม8">สติปัญญา/การเรียนรู้</option>
+                </select>
+                <br>
+                <button type="button" onclick="showResult2()">เช็คเลย</button>
+            </form>
+            <br>
+            <div id="result2" class="result2"></div>
+        </div>
+    </div>
+    <img src="https://static.thairath.co.th/media/PZnhTOtr5D3rd9oc9rvgZYY8TpRGNCyTXgb0iCm47bmq377.jpg" alt="bottom-left" class="bottom-left-image">
+</div>
+<div class="right">
+  
+            <div class="center_text">
+                <h1 style="margin-top: 5%; margin-bottom: 0;">เช็คเบอร์มือถือ</h1>
+                <br><br>
+                <form id="numberForm">
+                    <label for="numbers">กรอกเลขท้าย 2 ตัว</label><br>
+                    <input type="text" id="numbers" name="numbers" placeholder="       เช่น 10 56 84 เป็นต้น"><br>
+                    <input type="submit" value="ตรวจสอบ">
+                </form>
+            
+                <br>
+                    <div id="result3" class="result3"></div>
+            </div>
+            <img src="https://static.thairath.co.th/media/PZnhTOtr5D3rd9oc9rvgZYY8TpRGNCyTXgb0iCm47bmq377.jpg" alt="bottom-right" class="bottom-right-image">
+</div>
+<script>
+    function showResult() {
+        const select = document.getElementById("selection");
+        const result = document.getElementById("result");
+        const selectedValue = select.value;
+
+        switch(selectedValue)
+        {
+            case "กลุ่ม1":
+                result.textContent =" เบอร์ที่เหมาะสมคือ : 14 41 15 51 35 53 39 93" ;
+                break;
+            case "กลุ่ม2":
+                result.innerHTML ="เบอร์ที่เหมาะสมคือ : 22 23 32 24 42 26 62 <br> 29 44 46 64 49 94 66 69";
+                break;
+            case "กลุ่ม3":
+                result.innerHTML="เบอร์ที่เหมาะสมคือ : 19 91 29 92 49 <br> 94 59 95 99"      
+                break;
+            default:
+                result.textContent = "กรุณาเลือกตัวเลือกก่อนกด 'เช็คเลย'";
+        }
+    }
+    function showResult2(){
+        const select2 = document.getElementById("selection2");
+        const result2 = document.getElementById("result2");
+        const selectedValue2 = select2.value;
+
+        switch(selectedValue2)
+        {
+            case "กลุ่ม4":
+                result2.innerHTML =" เบอร์ที่เหมาะสมคือ : 365 636 789 289 236 239 936 235 <br> 879 619 635 639 615 356 359 935" ;
+                break;
+            case "กลุ่ม5":
+                result2.innerHTML ="เบอร์ที่เหมาะสมคือ : 23 32 24 42 36 63 636 632 <br> 663 363 232 236 366 223";
+                break;
+            case "กลุ่ม6":
+                result2.innerHTML="เบอร์ที่เหมาะสมคือ : 28 82 78 87 89 98 289 829 <br> 789 879 639 239 619 669 229 989"      
+                break;
+            case "กลุ่ม7":
+                result2.innerHTML="เบอร์ที่เหมาะสมคือ : 35 53 78 87 89 98 <br> 39 93 789 879 539 935"      
+                break;
+            case "กลุ่ม8":
+                result2.innerHTML="เบอร์ที่เหมาะสมคือ : 14 41 15 51 16 61 45 <br> 54 55 65 56 59 95 99"      
+                break;
+            default:
+                result2.innerHTML = "กรุณาเลือกตัวเลือกก่อนกด 'เช็คเลย'";
+        }
+    }
+</script>
+<script>
+    // เมื่อฟอร์มถูกส่ง
+    document.getElementById("numberForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // รับค่าจาก input (ค่าที่เป็นสตริง)
+        let input = document.getElementById("numbers").value;
+
+        // แปลงค่าที่เป็นสตริงให้เป็นอาร์เรย์ของตัวเลข
+        let numberArray = input.split("").map(num => Number(num.trim()));
+
+        // ทำการ sort ตัวเลขจากน้อยไปมาก
+        numberArray.sort((a, b) => a - b);
+
+        // เก็บผลลัพธ์ไว้ในตัวแปร
+        let sortedNumbers = numberArray.join("");
+
+        switch(sortedNumbers)
+        {
+            case "00":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ชอบเก็บตัว โลกส่วนตัวสูง ความลับเยอะ <br> ความคิดแปลกแหวกแนว เป็นคนขวางโลก ระวังเนื้องอกและมะเร็ง";
+                break;
+            case "01":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ถูกโกง โดนทรยศ หักหลัง ชีวิตเหมือนดิ่งลงเหว ใจร้อน<br> หงุดหงิดง่าย ขาดคนเมตตาเอ็นดู โดนอิฉาริษยา มักเป็นไมเกรน";
+                break;
+            case "11":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> พูดตรง ใจร้อน มีความมั่นใจในตัวเองสูงมาก มีความโดดเด่น<br> เด่นดังมั่นใจ มักขึ้นจนสุดและดิ่งลงสุดเช่นกัน โดนหมั่นไส้";
+                break;
+            case "12":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> อารมณ์ขึ้นๆลงๆ สับสนอยู่บ่อยๆ ตัดสินใจอะไรลังเล <br>ทะเลาะกับคนใกล้ชิดเสมอๆ ทำเรื่องเล็กให้กลายเป็นเรื่องใหญ่ ไบโพล่า";
+                break;
+            case "13":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ชอบบุกชอบลุย เป็นนักรับ นักสู้มีความเข้มแข็ง อารมณ์รุนแรง <br> ใจร้อน ติดสินใจเร็ว ไม่ค่อยคิดหน้าคิดหลัง มักเกิดอุบัติเหตุบ่อยๆ ";
+                break;
+            case "14":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> พูดจาดี พูดเก่ง ช่างเจรจา มีวาทะศิลป์ในการพูด มีความสามารถในการสื่อสาร<br> ผู้ใหญ่เอ็นดูจากคำพูด เข้าหาผู้ใหญ่ได้ดี";
+                break;
+            case "15":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> สติปัญญาดีเยี่ยม ชอบศึกษาหาความรู้ เรียนเก่ง หัวไว <br>ผู้ใหญ่เมตตาเพราะดูเป็นคนเก่งมีความสามารถ";
+                break;
+            case "16":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> นักวิเคราะห์ไตร่ตรอง รอบคอบ เป็นนักวางแผน คิดคำนวนมุ่งมั่นขยันเก็บเงิน <br>งาน คิดแล้วคิดอีก คิดก่อนทำ";
+                break;
+            case "17":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> บ้าพลัง ใจร้อน เผด็จการ มั่นใจในตัวเองสูง เข้มงวดมาก  ทำงานเก่ง<br> ลงมือทำ มีความเครียด แบกรับภาระทุกอย่างมาเป็นของตัวเอง";
+                break;
+            case "18":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ใจร้อน บ้าอำนาจ มีความเป็นนักเลงสูง ทำคุณคนไม่ขึ้น <br>ถูกโกง หักหลัง มีเหตุให้จ่ายเงินง่าย";
+                break;
+            case "19":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีความโดดเด่น เด่นดัง มีชื่อเสียง มีความเป็นผู้นำ มีความมั่นใจ <br>กล้าแสดงออก วิสัยทัศน์ดี หัวคิดทันสมัย คิดล้ำหน้าคนอื่น";
+                break;
+            case "02":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มักผิดหวังเสียใจทั้งในด้านการเงินและความรัก ใจดี ใจอ่อน<br> เสียเปรียบคนอื่นเสมอ ระวังโรคในช่องท้อง ";
+                break;
+            case "22":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ใจดี มีเมตตา มีสเน่ห์ อ่อนหวาน อ่อนโยน ชอบช่วยเหลือเห็นอกเห็นใจผู้อื่น <br>ชอบงานบริการ ชอบความสวยความงาม";
+                break;
+            case "23":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีสเน่ห์แรงมากๆ น่าหลงไหล เป็นที่ต้องตาต้องใจ ดึงดูดเพศตรงข้าม <br>ค้าขายดี เงินเข้าเยอะหาเงินได้เร็ว เงินทองไม่ขาดมือ";
+                break;
+            case "24":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีพลังแห่งเมตตามหานิยม วาจาเป็นทรัพย์ ดึงดูดทั้งงาน<br> ทั้งเงิน และยังบุคคลิกน่ารัก น่าเอ็นดูต่อผู้พบเห็น";
+                break;
+            case "25":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> 9 ใน 10 หญิงต้องอุปถัมป์ผู้ชาย มักอยู่ใต้อำนาจผู้ชายหรือโดนข่ม <br>ระวังขัดแย้งกับผู้ใหญ่ ระวังโรคเกี่ยวกับทางเดินหายใจ";
+                break;
+            case "26":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> วาจาดี มีสเน่ห์ที่คำพูดดูอบอุ่น น่าเข้าใกล้ เข้าหา <br>จึงมักกลายเป็นที่ปรึกษาเสมอๆ หรือมีคนเข้ามาพูดคุยด้วยแบบง่าย ๆ";
+                break;
+            case "27":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> การเงินมีปัญหา มักมีหนี้สิน ขยันหาเงินแต่ทำเงินให้คนอื่นใช้ <br>ภาระเยอะแม้จะหัวไว เอาตัวรอดเก่ง แต่มีคนเอาภาระมาโยนให้เสมอ";
+                break;
+            case "28":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> เลขเงินหมุนก้อนใหญ่จับงานใหญ่คิดแต่เรื่องหาเงินหารายได้<br> ชอบลงทุนกลุ่มนี้เหมาะกับคนทำธุรกิจเพราะเป็นเลขเงินหมุนเข้าแรง";
+                break;
+            case "29":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีสเน่ห์ รายได้ดี วาจาอ่อนหวาน โรแมนติก รสนิยมดี รักสวยรักงาม<br> หัวคิดสร้างสรรค์ มีความเก่งและชอบด้านศิลปะต่างๆ ";
+                break;
+            case "03":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ใจร้อน ฉุนเฉียวง่าย ชอบทำเรื่องเล็กให้กลายเป็นเรื่องใหญ่ <br>ไม่ค่อยเชื่อใครง่าย ชอบจับผิดคนอื่น ระวังโรคไมเกรน โรคประสาท";
+                break;
+            case "33":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> จอมพลัง ขาลุย ชอบลงมือลงแรง ลงมือทำทันที ใจร้อน<br> พูดตรง พูดไม่คิด เหมาะกับผู้ที่ต้องใช้แรง นักกีฬา";
+                break;
+            case "34":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ปากจัด ใจร้อน พูดตรง พูดแรง ไม่แคร์ความรู้สึกคนอื่น<br> ระวังการปะทะคารม และอุบัติเหตุ ระวังโรคช่องปาก ร้อนใน กรดไหลย้อน";
+                break;
+            case "35":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีอำนาจ เข้มแข็ง ดุดัน สามารถปกครองคนได้ดี ขยัน ลุยงานยาก<br> มักประสบความสำเร็จ ผู้ใหญ่ให้การอุปถัมป์";
+                break;
+            case "36":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> หาเงินคล่อง การเงินดี เงินไม่ขาดมือ สเน่ห์แรง<br> รวย เลิศ เชิ่ด หยิ่ง เลือกเก่ง แต่มีคนเมตตาตลอด";
+                break;
+            case "37":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ต้องฝ่าฟังอุปสรรคในทุกรูปแบบ พบความเครียด ความกดดันสูง<br> มักได้รับแต่งานหนัก พูดจากไม่เพราะ แข็งกระด้าง ระวังการผ่าตัด";
+                break;
+            case "38":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ใจกล้า บ้าบิ่น ไม่กลัวใคร พร้อมชนพร้อมปะทะเสมอ นักเลง<br> ตัดสินใจด้วยอารมณ์ขาดความรอบคอบ ระวังทะเลาะเบาะแว้งทุกรูปแบบ";
+                break;
+            case "39":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีโชคในการแข่งขันทุกชนิด เซ้นส์ดีในการตัดสินใจ ชอบความตื่นเต้นเร้าใจ<br> ท้าทาย มีความคล่องตัว ทำอะไรไวจนคนอื่นตามไม่ทัน";
+                break;
+            case "04":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มักไปล่วงรู้ความลับผู้อื่นแบบไม่ตั้งใจ แล้วเก็บความลับไม่ได้ <br>ปากโป้ง ปากพาซวย ระวังโรคช่องท้อง กระเพาะอักเสป";
+                break;
+            case "44":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ช่างพูด ช่างเจรจา เก่งด้านการประสานงานกับผู้อื่น กล้าพูดกล้าคุย <br>เข้ากับคนอื่นง่าย เป็นเลขที่ต้องเดินทางอยู่บ่อย ๆ";
+                break;
+            case "45":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีความสามารถในการถ่ายทอดความรู้ เลขวิชาการ พูดจามีหลักการ <br>น่าเชื่อถือเข้ากับผู้ใหญ่ได้ดี ศึกษาอะไรจะเข้าใจได้ไว สมองดี";
+                break;
+            case "46":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีสเน่ห์ เงินทอง มีกินมีใช้ไม่ขาด ชีวิตบันเทิงร่าเริง ไม่เครียด <br>ทำตัวสบายๆ เรื่อย ๆ ไม่ทุกข์ไม่ร้อน ปล่อยวางอะไรง่ายไม่เก็บมาเครียด";
+                break;
+            case "47":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> นักสู้งานตัวจริง เจองานหนักสู้ไม่ถอย ขยัน อดทน ทรหด<br> พักผ่อนน้อย เครียด จริงจังกับทุกเรื่อง สามารถฝ่าฟันอุปสรรคไปได้";
+                break;
+            case "48":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีเล่ห์เหลี่ยม ฉลาดแกมโกง รู้จักเอาตัวรอด แต่ชีวิตวุ่นวาย <br>ชีวิตไม่พ้นเรื่องการโกงหรือต้องเกี่ยวพันกับเรื่องคดีความต่าง ๆ ";
+                break;
+            case "49":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีไหวพริบ ปฏิภาณดีเยี่ยม หัวไวเรียนรู้ คิดเร็ว พูดเร็ว <br>สามารถสื่อสารต่างภาษาได้หรือสื่อกับจิตวิญญาณได้ ชอบสวดมนต์ อาจมีเซ้นส์";
+                break;
+            case "05":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ชอบพิสูจน์ ชอบทดลอง ค้นคว้าศึกษาด้วยตนเอง <br>ไม่เชื่ออะไรง่าย ๆจนกลายเป็นหัวดื้อ ไม่ฟังใคร เลขคนโสดเพราะเลือกมาก";
+                break;
+            case "55":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ใจดี ใจเย็น มีคุณธรรม ชอบช่วยเหลือผู้อื่นเหมาะกับสายธรรม <br>ชอบช่วยเหลือผู้ยากไร้หรือด้อยกว่า ซื่อสัตย์ มั่นคง สุขุม นิ่ง";
+                break;
+            case "56":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> พลังแห่งการเงินและปัญญาที่ลงตัว เลขโภคทรัพย์ ทางสายกลาง <br>พอดี พอเพียง ไม่ตึง ไม่หย่อนจนเกินไป ไม่เน้นแข่งกับใคร";
+                break;
+            case "57":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> พูดตรงเกินไป แม้ทำดี แต่คนไม่ชอบ ทำคุณคนไม่ขึ้น<br> ขาดคนเมตตาสนับสนุนระวังขัดแย้งกับผู้ใหญ่หรือเพื่อนร่วมงาน";
+                break;
+            case "58":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> แก้ปัญหาเก่ง และมีปัญหาเข้ามาให้แก้ตลอด ชีวิตวุ่นวายไปหมด<br> มีเล่ห์เหลี่ยม หัวคิดซับซ้อนซ่อนเงื่อน ระวังปวดหลัง เจ็บกลางลำตัว";
+                break;
+            case "59":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> สนใจทางศาสนา หรือสิ่งศักดิ์สิทธิ์ มีซิกเซ้นส์แม่นยำพลังสมาธิดีเยี่ยม<br> รักความสงบ อารมณ์นิ่งไม่ชอบการปะทะผู้ใหญ่เมตตาสุขภาพดี";
+                break;
+            case "06":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> เงินหายไปกับการหาเงินให้คนอื่นใช้ ความักไม่ดี รักซ้อน <br>การเงินรั่วมาก ๆ ให้ใครยืมมักไม่ได้คืน เสียเปรียบทั้งเรื่องเงินและความัก";
+                break;
+            case "66":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> เงินดี อารมณ์ดี รสนิยมดี กินเก่ง ชอบใช้ชอบแพง ของหรู<br> สนุกสนานรักสวยรักงาม รักสนุก ทำตัวสบายๆลั้ลลา ร่าเริง";
+                break;
+            case "67":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> รักร้าว แยกทาง รักๆเลิกๆ ไม่แน่นอน เงินทองหาง่าย<br> แต่ก็ละลายหมดสิ้นมีคนมาช่วยใช้ มักต้องลาจากสิ่งที่รัก พลักพราก";
+                break;
+            case "68":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ฉลาดหลักแหลมรู้จักพลิกแพลง เอาตัวรอดเก่ง มีมิจฉาทิฏฐิ <br>ลุ่มหลงมัวเมาได้ง่าย ชอบธุรกิจสายเทา หาเงินเก่งและใช้เงินเก่งมาก ";
+                break;
+            case "69":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> เงินหมุนเข้าเร็ว ออกเร็ว มีเงิน มีสเน่ห์ น่าหลงไหล เอาแต่ใจ <br>รักสวยรักงาม แต่งตัวเก่ง ชีวิตมีสีสัน รสนิยมดี โรแมนติกมีหัวศิลปะ";
+                break;
+            case "07":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> เครียดกดดัน งานยากลำบาก  กดดันตัวเอง เอาเครื่องรอบตัวเก็บมาเครียด<br> รับอุกเรื่องทุกอย่างมาเป็นภาระตัวเอง มักปวดไขข้อ";
+                break;
+            case "77":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> งานหนัก เครียดมาก ต้องอดทน อึดอัด เก็บความรู้สึกความเครียดไว้คนเดียว<br> ไม่แสดงออกให้ใครเห็น ระวังปวดกล้ามเนื้อ";
+                break;
+            case "78":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> รับเงินก้อนใหญ่ มักได้งานหรือธุรกิจใหญ่ เสี่ยงโชคได้ผลดี <br>มีพรรคพวกบริวารเยอะ มีคนคอยช่วยเหลือ หัวดีคิดพัฒนาธุรกิจ";
+                break;
+            case "79":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> คิดแปลก แหวกแนว ล้ำมากไปในบางเรื่อง มีมุมมองใหม่ๆเสมอ<br> คิดไม่เหมือนใครจนกลายเป็นคนเก็บตัวไม่ค่อยชอบเข้าสังคม";
+                break;
+            case "08":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ใจใหญ่ ใจนักเลง หน้าใหญ่ ขี้โมโห ติดเที่ยว บันเทิง<br> อาจมีเข้าไปพัวพันเรื่องสิ่งเสพติด อบายมุข สายเทา สายดำ";
+                break;
+            case "88":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ใจใหญ่ พี่ใหญ่ ใจถึง พึ่งได้ และใจร้อน มุทะลุหาเงินเก่ง<br> จ่ายเงินเก่ง หมดไปกับการเลี้ยงผู้อื่น ลุ่มหลงอะไรแล้วทุ่มสุดตัว ";
+                break;
+            case "89":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> ดวงแข็ง แคล้วคลาด มีอำนาจ ดุดัน ไม่ง้อใคร เซ้นส์แรง<br> สินใจสิ่งเร้นลับ รับเงินก้อนใหญ่ มีโชคลาภบ่อยๆ";
+                break;
+            case "09":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> มีลางสังหรณ์แม่นยำ อารมณ์ขึ้น ๆ ลง ๆไม่แน่นอน ชอบเก็บตัวอยู่คนเดียว<br> ทำตัวลึกลับ คิดอะไรแปลกเพี้ยน สนใจเรื่องผีสาง";
+                break;
+            case "99":
+                document.getElementById("result3").innerHTML = "ความหมายของ "+ input +" คือ <br> เซ้นส์แรง คิดแปลก แหวกแนว มีโลกส่วนตัว <br>มีสิ่งศักดิ์สิทธิ์คุ้มครอง แคล้วคลาดปลอดภัย สุขภาพดี";
+                break;
+            default:
+                document.getElementById("result3").innerHTML = "กรุณากรอกเลขท้าย2ตัว";
+                break;
+        }
+    });
+</script>
+</body>
+</html>
